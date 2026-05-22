@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About RGT — Learn what Revive Gorilla Tag is and why Gorilla Tag needs a revival." />
+  <meta name="theme-color" content="#050b0e" />
+  <title>About — RGT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,255,136,0.06) 0%, transparent 60%),
+                  var(--clr-bg);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      margin: 12px 0 16px;
+      letter-spacing: 0.04em;
+    }
+    .page-hero .sub {
+      font-size: 1.05rem;
+      color: var(--clr-text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+    .page-back:hover { color: var(--clr-primary); }
+    .section-cta {
+      text-align: center;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid var(--clr-border);
+    }
+    .section-cta p { color: var(--clr-text-muted); margin-bottom: 24px; font-size: 1.05rem; }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-rgt">RGT</span>
+        <span class="logo-full">Revive Gorilla Tag</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="goals.html">Our Goals</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="join.html" class="nav-cta">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <a href="index.html" class="page-back"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+      <span class="section-tag">ABOUT RGT</span>
+      <h1>What is <span class="highlight">Revive Gorilla Tag</span>?</h1>
+      <p class="sub">We're not just a fan page — we're a grassroots movement built by players, for players.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p><strong>Gorilla Tag</strong> is one of the most iconic VR games ever created — a simple, physics-driven experience where players swing, jump, and tag each other as gorillas. At its peak, it was a cultural phenomenon in the VR space.</p>
+          <p>But like many games, the flame started to fade. Player counts dropped, the community splintered, and the magic began to disappear. That's where <strong>RGT</strong> comes in.</p>
+          <p><strong>Revive Gorilla Tag</strong> is a community-led initiative to bring back everything that made Gorilla Tag special — and push it further than ever before.</p>
+          <div class="about-tags">
+            <span class="tag">Community Events</span>
+            <span class="tag">Content Creation</span>
+            <span class="tag">Player Growth</span>
+            <span class="tag">Mod Support</span>
+            <span class="tag">Tournaments</span>
+          </div>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-card-inner">
+            <div class="about-card-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+            <h3>The Game</h3>
+            <p>A physics-based VR tag game where you move by pushing off the ground with your hands. Pure gorilla energy.</p>
+          </div>
+          <div class="about-card-inner">
+            <div class="about-card-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>The Community</h3>
+            <p>Thousands of players who love the game and want to see it thrive again. We are gorillas united.</p>
+          </div>
+          <div class="about-card-inner">
+            <div class="about-card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>The Mission</h3>
+            <p>Restore the playerbase, host community events, grow content creators, and keep the spirit alive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM SECTION -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">THE SITUATION</span>
+        <h2>Why Does Gorilla Tag <span class="highlight">Need Revival</span>?</h2>
+        <p class="section-desc">Understanding the problem is the first step to fixing it.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card reveal" data-delay="0">
+          <div class="problem-icon"><i class="fa-solid fa-chart-line-down"></i></div>
+          <h3>Declining Players</h3>
+          <p>Peak player counts have dropped significantly as newer VR titles pulled attention away from the gorilla arena.</p>
+        </div>
+        <div class="problem-card reveal" data-delay="100">
+          <div class="problem-icon"><i class="fa-solid fa-users-slash"></i></div>
+          <h3>Fragmented Community</h3>
+          <p>Players scattered across platforms, servers, and groups — with no central rally point to unite them.</p>
+        </div>
+        <div class="problem-card reveal" data-delay="200">
+          <div class="problem-icon"><i class="fa-solid fa-ghost"></i></div>
+          <h3>Fading Content</h3>
+          <p>Content creators moved on, streams dried up, and the hype that once drove millions of views fizzled out.</p>
+        </div>
+        <div class="problem-card reveal" data-delay="300">
+          <div class="problem-icon"><i class="fa-solid fa-bug"></i></div>
+          <h3>Unresolved Issues</h3>
+          <p>Persistent bugs, toxic players, and lack of fresh content pushed many long-time fans away from the game.</p>
+        </div>
+      </div>
+      <div class="problem-cta reveal">
+        <p>Sound familiar? <strong>We're fixing that.</strong></p>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Ready to see the plan?</p>
+        <a href="goals.html" class="btn btn-primary">
+          <i class="fa-solid fa-bullseye"></i> View Our Goals
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-rgt">RGT</span>
+          <p>Revive Gorilla Tag<br /><small>Community-driven. Player-powered. Gorilla-approved.</small></p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="goals.html">Our Goals</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" aria-label="Reddit"><i class="fa-brands fa-reddit"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Revive Gorilla Tag (RGT). Not affiliated with Another Axiom or Gorilla Tag officially.</p>
+        <p>Made with <i class="fa-solid fa-heart" style="color:#00ff88"></i> by the RGT Community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
