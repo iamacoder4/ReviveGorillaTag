@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RGT Community — Join the gorilla tribe on Discord, Reddit, and YouTube." />
+  <meta name="theme-color" content="#050b0e" />
+  <title>Community — RGT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,255,136,0.06) 0%, transparent 60%),
+                  var(--clr-bg);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .page-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: #fff;
+      margin: 12px 0 16px;
+      letter-spacing: 0.04em;
+    }
+    .page-hero .sub {
+      font-size: 1.05rem;
+      color: var(--clr-text-muted);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .page-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: var(--clr-text-muted);
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+    .page-back:hover { color: var(--clr-primary); }
+    .section-cta {
+      text-align: center;
+      margin-top: 64px;
+      padding-top: 48px;
+      border-top: 1px solid var(--clr-border);
+    }
+    .section-cta p { color: var(--clr-text-muted); margin-bottom: 24px; font-size: 1.05rem; }
+  </style>
+</head>
+<body>
 
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-rgt">RGT</span>
+        <span class="logo-full">Revive Gorilla Tag</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="goals.html">Our Goals</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="join.html" class="nav-cta">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <a href="index.html" class="page-back"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+      <span class="section-tag">JOIN THE TRIBE</span>
+      <h1>Be Part of the <span class="highlight">Revival</span></h1>
+      <p class="sub">The gorillas move as one. Find your platform and come join us.</p>
+    </div>
+  </div>
+
+  <section id="community">
+    <div class="container">
+      <div class="community-grid">
+        <div class="community-card reveal discord">
+          <div class="community-card-bg"></div>
+          <i class="fa-brands fa-discord community-icon"></i>
+          <h3>Discord Server</h3>
+          <p>Our main hub. Events, announcements, team channels, and thousands of fellow gorillas waiting to play. This is where the action happens.</p>
+          <a href="#" class="btn btn-primary sm"><i class="fa-solid fa-arrow-right"></i> Join Discord</a>
+        </div>
+        <div class="community-card reveal reddit" data-delay="100">
+          <div class="community-card-bg"></div>
+          <i class="fa-brands fa-reddit community-icon"></i>
+          <h3>Reddit Community</h3>
+          <p>Share clips, memes, updates, and stories. The subreddit is where the gorilla lore lives and where the best moments get shared.</p>
+          <a href="#" class="btn btn-outline sm"><i class="fa-solid fa-arrow-right"></i> Join Subreddit</a>
+        </div>
+        <div class="community-card reveal youtube" data-delay="200">
+          <div class="community-card-bg"></div>
+          <i class="fa-brands fa-youtube community-icon"></i>
+          <h3>YouTube Channel</h3>
+          <p>Event recaps, tutorials, highlight reels, and the best moments from the RGT community — all in one place. Subscribe for updates.</p>
+          <a href="#" class="btn btn-outline sm"><i class="fa-solid fa-arrow-right"></i> Subscribe</a>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <p>Already in the community? Make it official.</p>
+        <a href="join.html" class="btn btn-primary">
+          <i class="fa-solid fa-hand-fist"></i> Sign Up for RGT
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-rgt">RGT</span>
+          <p>Revive Gorilla Tag<br /><small>Community-driven. Player-powered. Gorilla-approved.</small></p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="goals.html">Our Goals</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Follow Us</h4>
+          <div class="social-icons">
+            <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+            <a href="#" aria-label="Reddit"><i class="fa-brands fa-reddit"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Revive Gorilla Tag (RGT). Not affiliated with Another Axiom or Gorilla Tag officially.</p>
+        <p>Made with <i class="fa-solid fa-heart" style="color:#00ff88"></i> by the RGT Community.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
