@@ -383,5 +383,6 @@ section { padding: 100px 0; }
   margin-bottom: 24px;
   font-size: 1.05rem;
 }
-
+/* Updated join-success for email confirmation */
+.join-success p { color: var(--clr-text-muted); max-width: 400px; margin: 0 auto; }
 ::selection { background: rgba(0, 255, 136, 0.2); color: #fff; }
