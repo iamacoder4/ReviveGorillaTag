@@ -11,40 +11,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .page-hero {
-      padding: 140px 24px 80px;
-      text-align: center;
-      background: radial-gradient(ellipse at 50% 0%, rgba(0,255,136,0.06) 0%, transparent 60%),
-                  var(--clr-bg);
-      border-bottom: 1px solid var(--clr-border);
-    }
-    .page-hero h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 900;
-      color: #fff;
-      margin: 12px 0 16px;
-      letter-spacing: 0.04em;
-    }
-    .page-hero .sub {
-      font-size: 1.05rem;
-      color: var(--clr-text-muted);
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-    .page-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      color: var(--clr-text-muted);
-      margin-bottom: 20px;
-      transition: color 0.3s;
-    }
-    .page-back:hover { color: var(--clr-primary); }
-  </style>
 </head>
 <body>
 
@@ -71,8 +37,8 @@
     <div class="container">
       <a href="index.html" class="page-back"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
       <span class="section-tag">GET INVOLVED</span>
-      <h1>Would You <span class="highlight">like to join</span>?</h1>
-      <p class="sub">If you would like to join RGT, Join Our Discord - coming soon..</p>
+      <h1>Ready to <span class="highlight">Swing Back In</span>?</h1>
+      <p class="sub">Whether you're a veteran gorilla or brand new to VR, there's a place for you in RGT.</p>
     </div>
   </div>
 
@@ -92,15 +58,21 @@
             <option value="psvr">PSVR2</option>
             <option value="both">Multiple Platforms</option>
           </select>
-          <button type="submit" class="btn btn-primary full">
+          <button type="submit" class="btn btn-primary full" id="submitBtn">
             <i class="fa-solid fa-hand-fist"></i> Join the Movement
           </button>
           <p class="form-note">No spam. Just gorilla updates.</p>
         </form>
+
         <div class="join-success" id="joinSuccess" style="display:none">
           <i class="fa-solid fa-circle-check"></i>
           <h3>You're in!</h3>
-          <p>Welcome to RGT. The gorillas are ready for you.</p>
+          <p>Welcome to RGT. Check your email for a welcome message — see you in the trees.</p>
+        </div>
+
+        <div class="join-error" id="joinError" style="display:none">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <p>Something went wrong sending the email. Try again or join our <a href="#">Discord directly</a>.</p>
         </div>
       </div>
     </div>
@@ -141,6 +113,84 @@
     </div>
   </footer>
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="main.js"></script>
+  <script>
+    // ============================================================
+    // EMAILJS SETUP — replace these 4 values with your own
+    // Instructions below
+    // ============================================================
+    const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // from emailjs.com > Account
+    const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // from Email Services tab
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // from Email Templates tab
+    const DISCORD_LINK        = 'https://discord.gg/YOUR_INVITE'; // your Discord invite
+    // ============================================================
+
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+    document.getElementById('joinForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const name     = document.getElementById('joinName').value.trim();
+      const email    = document.getElementById('joinEmail').value.trim();
+      const platform = document.getElementById('joinPlatform').value;
+
+      // Validation
+      if (!name || !email || !platform) {
+        this.style.animation = 'none';
+        this.offsetHeight;
+        this.style.animation = 'shake 0.4s ease';
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        const emailInput = document.getElementById('joinEmail');
+        emailInput.style.borderColor = '#ff6b35';
+        setTimeout(() => { emailInput.style.borderColor = ''; }, 2000);
+        return;
+      }
+
+      // Loading state
+      const btn = document.getElementById('submitBtn');
+      btn.disabled  = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+
+      try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+          to_name:      name,
+          to_email:     email,
+          platform:     platform,
+          discord_link: DISCORD_LINK,
+        });
+
+        // Success
+        document.getElementById('joinForm').style.display    = 'none';
+        document.getElementById('joinSuccess').style.display = 'block';
+
+      } catch (err) {
+        console.error('EmailJS error:', err);
+        btn.disabled  = false;
+        btn.innerHTML = '<i class="fa-solid fa-hand-fist"></i> Join the Movement';
+        document.getElementById('joinError').style.display = 'block';
+      }
+    });
+  </script>
+
+  <style>
+    .join-error {
+      margin-top: 20px;
+      padding: 20px 24px;
+      background: rgba(255, 107, 53, 0.08);
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--clr-text-muted);
+      font-size: 0.9rem;
+    }
+    .join-error i { color: #ff6b35; font-size: 1.2rem; flex-shrink: 0; }
+    .join-error a { color: var(--clr-primary); text-decoration: underline; }
+  </style>
 </body>
 </html>
